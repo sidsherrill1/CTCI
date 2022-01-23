@@ -30,6 +30,9 @@ def Check_Repeat_Address(head, addresses):
 def Check_Intersection(head1, head2):
     addresses = set()
     if Check_Repeat_Address(head1, addresses) or Check_Repeat_Address(head2, addresses):
+        return True
+    else:
+        return False
 
 
 # //***************************************************************************************//
@@ -38,7 +41,7 @@ def Check_Intersection(head1, head2):
 
 
 def main():
-    print(1)
+    print()
 
 
 if __name__ == "__main__":
