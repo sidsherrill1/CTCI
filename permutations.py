@@ -7,17 +7,28 @@ Print all permutations of a string.
 # //
 # //
 
-class Trie_Node:
-    def __init__(self,c,next = None):
-        self.c = c
-        self.next = next
 
-def Build_Trie(s):
-    
+def Perms_Helper(s, perms, c_i):
+    c = s[c_i]
+    if c_i == 0:
+        return {c}
 
-def Print_Permutations(s):
+    perms = Perms_Helper(s, perms, c_i - 1)
 
-    
+    new_perms = set()
+    for perm in perms:
+        new_perms.add(c + perm)
+        new_perms.add(perm + c)
+        for i in range(1, len(perm)):
+            new_perm = perm[:i] + c + perm[i:]
+            new_perms.add(new_perm)
+
+    return new_perms
+
+
+def Perms(s):
+    return Perms_Helper(s, set(), len(s) - 1)
+
 
 # //***************************************************************************************//
 # //
@@ -25,7 +36,8 @@ def Print_Permutations(s):
 
 
 def main():
-    s = "Sidney"
+    s = "abc"
+    print(Perms(s))
 
 
 if __name__ == "__main__":

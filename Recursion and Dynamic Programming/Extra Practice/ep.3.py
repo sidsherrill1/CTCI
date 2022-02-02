@@ -1,13 +1,21 @@
 """
 Problem statement:
-Write a method to compute all permutations of a string whose characters
-are not necessarily unique. The list of permutations should not have duplicates.
-
+Write a program to the get factorial of a non-negative integer.
 """
 
 # //----------------------------------------------------------------------------------//
 # //
 # //
+
+
+def Get_Fact(n):
+    if n == 0:
+        return 0
+
+    if n == 1:
+        return 1
+
+    return n * (Get_Fact(n - 1))
 
 
 # //***************************************************************************************//
@@ -16,7 +24,7 @@ are not necessarily unique. The list of permutations should not have duplicates.
 
 
 def main():
-    print(1)
+    print(Get_Fact(4))
 
 
 if __name__ == "__main__":

@@ -9,24 +9,16 @@ Write a method to return all subsets of a set.
 
 
 def Return_All_Subsets(s):
-    all_subsets = []
-    return Return_All_Subsets_rec(s, all_subsets)
-
-
-def Return_All_Subsets_rec(s, all_subsets):
-
-    if len(s) == 0:
-        return
-
-    if s not in all_subsets:
-        all_subsets.append(s)
-
+    subsets = [set()]
     for val in s:
-        new_s = s.copy()
-        new_s.remove(val)
-        Return_All_Subsets_rec(new_s, all_subsets)
+        new_subsets = []
+        for s in subsets:
+            new_s = s.copy()
+            new_s.add(val)
+            new_subsets.append(new_s)
+        subsets += new_subsets
 
-    return all_subsets
+    return subsets
 
 
 # //***************************************************************************************//

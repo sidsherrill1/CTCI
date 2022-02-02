@@ -1,13 +1,21 @@
 """
 Problem statement:
-Write a method to compute all permutations of a string whose characters
-are not necessarily unique. The list of permutations should not have duplicates.
-
+Write a program to calculate the sum of a list of numbers.
 """
 
 # //----------------------------------------------------------------------------------//
 # //
 # //
+
+
+def Calc_Sum(l):
+    if len(l) == (0):
+        return 0
+
+    if len(l) == 1:
+        return l[0]
+
+    return l[0] + Calc_Sum(l[1:])
 
 
 # //***************************************************************************************//
@@ -16,7 +24,8 @@ are not necessarily unique. The list of permutations should not have duplicates.
 
 
 def main():
-    print(1)
+    l = [1, 2, 3, 4, 5]
+    print(Calc_Sum(l))
 
 
 if __name__ == "__main__":
